@@ -120,6 +120,14 @@ export const SKILLS = [
 ];
 
 export const PROJECTS = [
+    {
+    title: "CrevidAi",
+    description:
+      "A professional video generating ai platform built for content creators.",
+    tags: ["AI", "SaaS", "Automation","Video generator"],
+    link: "https://crevidai.com",
+    image: "https://res.cloudinary.com/djt69tcer/image/upload/v1783165665/localhost_3000__Nest_Hub_Max_1_cbbhtl.png",
+  },
   {
     title: "ConverseBiz",
     description:
