@@ -153,6 +153,14 @@ export const PROJECTS = [
     image: "https://res.cloudinary.com/djt69tcer/image/upload/v1771218635/pic2ans.vercel.app__o8m4sr.png",
   },
   {
+  title: "Mugic",
+  description:
+    "A free, ad-free Android music player focused on instant song search, playback, smart recommendations, and offline listening without requiring an account.",
+  tags: ["Android", "Music", "AI Recommendations", "Open Source"],
+  link: "https://mugic-app.vercel.app/",
+  image: "https://res.cloudinary.com/djt69tcer/image/upload/v1782746257/mugic-app.vercel.app__x14k2j.png"
+},
+  {
     title: "Nepali Handwriting OCR",
     description:
       "A CRNN-based deep learning model for Nepali handwritten text recognition.",
