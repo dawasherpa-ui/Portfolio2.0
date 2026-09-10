@@ -4,6 +4,8 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Contact } from "@/components/Contact";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { SmoothScroll } from "@/components/SmoothScroll";
+import { CustomCursor } from "@/components/CustomCursor";
 
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://dawa.dev",
+    url: "https://dawasherpaa.com",
     title: "Dawa Sherpa | Innovative Software Engineer & AI Architect",
     description: "Portfolio of Dawa Sherpa. Building innovative software, AI-powered agents, and intelligent systems that turn complex ideas into reality.",
     siteName: "Dawa Sherpa Portfolio",
@@ -41,16 +43,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body className={`${outfit.variable} ${playfair.variable} ${fira.variable} font-sans bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary transition-colors duration-300`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-          <div className="flex flex-col min-h-screen">
-            <Navbar />
-            <main className="flex-grow flex flex-col relative z-0">
-              {children}
-            </main>
-            <Contact />
-          </div>
+          <SmoothScroll>
+            <CustomCursor />
+            <div className="min-h-screen w-full">
+              <Navbar />
+              <main className="w-full relative">
+                {children}
+              </main>
+              <Contact />
+            </div>
+          </SmoothScroll>
         </ThemeProvider>
       </body>
     </html>

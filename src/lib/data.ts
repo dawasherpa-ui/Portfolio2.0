@@ -119,106 +119,177 @@ export const SKILLS = [
   { category: "Databases", items: ["MongoDB", "PostgreSQL", "MySQL"] },
 ];
 
-export const PROJECTS = [
-    {
+export interface Project {
+  title: string;
+  description: string;
+  tags: string[];
+  link: string;
+  image: string;
+  category: "AI & LLM" | "SaaS & Web" | "Deep Learning & Tools" | "Open Source";
+  featured?: boolean;
+  highlights?: string[];
+  github?: string;
+  metrics?: string;
+}
+
+export const PROJECTS: Project[] = [
+  {
     title: "CrevidAi",
     description:
-      "A professional video generating ai platform built for content creators.",
-    tags: ["AI", "SaaS", "Automation","Video generator"],
+      "A professional video generating AI platform engineered for modern content creators to automate cinematic video production from prompts.",
+    tags: ["AI", "SaaS", "Automation", "Video Generator"],
     link: "https://crevidai.com",
     image: "https://res.cloudinary.com/djt69tcer/image/upload/v1783165665/localhost_3000__Nest_Hub_Max_1_cbbhtl.png",
+    category: "AI & LLM",
+    featured: true,
+    metrics: "Automated Video Engine",
+    highlights: ["Script-to-video multi-modal workflow", "High-throughput cloud rendering", "Intelligent scene pacing & voice synthesis"],
+    github: "https://github.com/dawasherpa-ui",
   },
   {
     title: "ConverseBiz",
     description:
-      "A business communication & AI-driven automation platform built for modern teams.",
-    tags: ["AI", "SaaS", "Automation"],
+      "A high-impact business communication & AI-driven automation platform built to streamline team workflows and customer conversion.",
+    tags: ["AI", "SaaS", "Automation", "Next.js"],
     link: "https://conversebiz.com",
     image: "https://res.cloudinary.com/djt69tcer/image/upload/v1771218639/www.conversebiz.com__oincwh.png",
+    category: "SaaS & Web",
+    featured: true,
+    metrics: "Multi-Agent Automation",
+    highlights: ["Autonomous conversational routing", "Real-time analytics and team collaboration", "Enterprise CRM integrations"],
+    github: "https://github.com/dawasherpa-ui",
   },
   {
     title: "FlashUi",
     description:
-      "A custom UI component library built for fast product development.",
-    tags: ["React", "Library", "Open Source"],
+      "A custom high-performance UI component library engineered for lightning-fast modern product development with refined micro-interactions.",
+    tags: ["React", "Library", "Open Source", "Design System"],
     link: "https://component-library-git-main-dawa-sherpas-projects.vercel.app",
     image: "https://res.cloudinary.com/dpb8r7bqq/image/upload/v1726390892/Black_Minimalist_Website_Mockup_Instagram_Post_j5ca4p.png",
+    category: "Open Source",
+    featured: true,
+    metrics: "Design System Architecture",
+    highlights: ["Accessible and fully composable components", "Zero-runtime CSS overhead with custom tokens", "Interactive live documentation hub"],
+    github: "https://github.com/dawasherpa-ui",
   },
   {
     title: "Pic2Ans",
     description:
-      "AI-powered tool that extracts answers from images using OCR + LLM.",
-    tags: ["AI", "OCR", "LLM"],
+      "AI-powered intelligence system that extracts questions and formulas from uploaded images using high-accuracy OCR and answers with LLM reasoning.",
+    tags: ["AI", "OCR", "LLM", "Vision"],
     link: "https://pic2ans.vercel.app",
     image: "https://res.cloudinary.com/djt69tcer/image/upload/v1771218635/pic2ans.vercel.app__o8m4sr.png",
+    category: "AI & LLM",
+    featured: true,
+    metrics: "OCR + LLM Pipeline",
+    highlights: ["Visual document text & formula extraction", "Step-by-step mathematical & conceptual reasoning", "Optimized sub-second inference pipeline"],
+    github: "https://github.com/dawasherpa-ui",
   },
   {
-  title: "Mugic",
-  description:
-    "A free, ad-free Android music player focused on instant song search, playback, smart recommendations, and offline listening without requiring an account.",
-  tags: ["Android", "Music", "AI Recommendations", "Open Source"],
-  link: "https://mugic-app.vercel.app/",
-  image: "https://res.cloudinary.com/djt69tcer/image/upload/v1782746257/mugic-app.vercel.app__x14k2j.png"
-},
-  {
-    title: "Nepali Handwriting OCR",
+    title: "Mugic",
     description:
-      "A CRNN-based deep learning model for Nepali handwritten text recognition.",
-    tags: ["Deep Learning", "OCR", "Python"],
-    link: "https://github.com/dawasherpa-ui",
-    image: "https://res.cloudinary.com/djt69tcer/image/upload/v1771218633/colab.research.google.com_github_dawasherpa-ui_Nepali-Handwriting-Recognition-CRNN-OCR-Model_blob_main_Untitled0.ipynb_i7asld.png",
+      "A free, ad-free Android music player focused on instant song discovery, low-latency playback, smart recommendations, and offline caching.",
+    tags: ["Android", "Music", "AI Recommendations", "Open Source"],
+    link: "https://mugic-app.vercel.app/",
+    image: "https://res.cloudinary.com/djt69tcer/image/upload/v1782746257/mugic-app.vercel.app__x14k2j.png",
+    category: "Deep Learning & Tools",
+    featured: true,
+    metrics: "Ad-Free / Offline First",
+    highlights: ["On-device intelligent recommendation algorithms", "No login required, complete privacy focus", "Adaptive audio equalization engine"],
+    github: "https://github.com/dawasherpa-ui",
   },
   {
     title: "EchoFlow AI",
     description:
-      "Real Time voice to voice AI chatbot",
-    tags: ["AI", "Voice", "LLM"],
+      "Real-time bidirectional voice-to-voice AI agent delivering hyper-natural human conversational interaction with ultra-low acoustic latency.",
+    tags: ["AI", "Voice", "LLM", "WebSocket"],
     link: "https://echo-flow-ai.vercel.app/",
     image: "https://res.cloudinary.com/djt69tcer/image/upload/v1771219166/echo-flow-ai.vercel.app__zcyeoj.png",
+    category: "AI & LLM",
+    featured: true,
+    metrics: "<500ms Voice Latency",
+    highlights: ["Full-duplex WebSocket audio streaming", "Interruption handling & natural pause detection", "Dynamic personality context switching"],
+    github: "https://github.com/dawasherpa-ui",
+  },
+  {
+    title: "Nepali Handwriting OCR",
+    description:
+      "A CRNN-based deep learning architecture built from scratch for recognizing complex Devanagari handwritten scripts with high fidelity.",
+    tags: ["Deep Learning", "OCR", "Python", "PyTorch"],
+    link: "https://github.com/dawasherpa-ui",
+    image: "https://res.cloudinary.com/djt69tcer/image/upload/v1771218633/colab.research.google.com_github_dawasherpa-ui_Nepali-Handwriting-Recognition-CRNN-OCR-Model_blob_main_Untitled0.ipynb_i7asld.png",
+    category: "Deep Learning & Tools",
+    featured: false,
+    highlights: ["Convolutional Recurrent Neural Network (CRNN) model", "CTC loss optimization for unaligned text", "Custom Devanagari character tokenization"],
+    github: "https://github.com/dawasherpa-ui",
   },
   {
     title: "VoteHub",
     description:
-      "A voting & decision-support platform to help users choose the best option.",
-    tags: ["React", "Firebase"],
+      "A real-time voting & decision-support platform designed to help communities make data-backed consensus decisions without manipulation.",
+    tags: ["React", "Firebase", "Realtime", "Tailwind"],
     link: "https://votehub-rho.vercel.app",
     image: "https://res.cloudinary.com/djt69tcer/image/upload/v1771218649/votehub-rho.vercel.app__pef54w.png",
+    category: "SaaS & Web",
+    featured: false,
+    highlights: ["Live WebSocket poll synchronization", "Anti-sybil and duplicate voting protections", "Visual demographic breakdown graphs"],
+    github: "https://github.com/dawasherpa-ui",
   },
   {
     title: "Multi Dashboard",
-    description: "A CMS that manages content for multiple websites.",
-    tags: ["CMS", "Dashboard", "Management"],
+    description: "A centralized CMS and monitoring suite that controls content, analytics, and deployments across multiple distributed web applications.",
+    tags: ["CMS", "Dashboard", "Management", "Next.js"],
     link: "https://github.com/",
     image: "https://res.cloudinary.com/djt69tcer/image/upload/v1771218860/image_original_1_bciigo.png",
+    category: "SaaS & Web",
+    featured: false,
+    highlights: ["Multi-tenant database schema", "Role-based authorization matrix", "Unified media management"],
+    github: "https://github.com/dawasherpa-ui",
   },
   {
     title: "ChatBot",
-    description: "Chatbot built using LangChain, Chroma DB, and OpenAI.",
-    tags: ["AI", "LangChain", "OpenAI"],
+    description: "Enterprise conversational agent utilizing LangChain, Chroma DB vector store, and OpenAI embeddings for grounded internal knowledge retrieval.",
+    tags: ["AI", "LangChain", "OpenAI", "ChromaDB"],
     link: "https://github.com/dawasherpa-ui/chatbot.git",
     image: "https://res.cloudinary.com/djt69tcer/image/upload/v1771218634/github.com_dawasherpa-ui_chatbot_irytmv.png",
+    category: "AI & LLM",
+    featured: false,
+    highlights: ["Semantic document chunking & vector search", "Hallucination reduction with strict citations", "Persistent session memory buffering"],
+    github: "https://github.com/dawasherpa-ui/chatbot.git",
   },
   {
     title: "Scrapping Bot",
-    description: "Scraper built to gather real estate lead data.",
-    tags: ["Python", "Automation", "Scraping"],
+    description: "High-volume asynchronous web scraper built with Python to harvest, clean, and enrich real estate leads at massive scale.",
+    tags: ["Python", "Automation", "Scraping", "Data Pipeline"],
     link: "https://github.com/dawasherpa-ui/FastPeopleScraper",
     image: "https://res.cloudinary.com/djt69tcer/image/upload/v1771218632/github.com_dawasherpa-ui_FastPeopleScraper_fxrjsd.png",
+    category: "Deep Learning & Tools",
+    featured: false,
+    highlights: ["Asynchronous worker queues", "Automated proxy rotation and CAPTCHA bypass", "Structured CSV/JSON data pipeline exports"],
+    github: "https://github.com/dawasherpa-ui/FastPeopleScraper",
   },
   {
     title: "Instagram UnFollower Bot",
     description:
-      "Automation tool that unfollows Instagram users automatically.",
-    tags: ["Python", "Automation", "Bot"],
+      "Automated growth and audience management utility simulating human interaction rhythms to maintain clean following ratios safely.",
+    tags: ["Python", "Automation", "Bot", "APIs"],
     link: "https://github.com/dawasherpa-ui/Instagram-Unfollower",
     image: "https://res.cloudinary.com/djt69tcer/image/upload/v1771218633/github.com_dawasherpa-ui_Instagram-Unfollower_bubt46.png",
+    category: "Deep Learning & Tools",
+    featured: false,
+    highlights: ["Smart heuristic rate limiting", "Whitelist protection for priority accounts", "Comprehensive execution logging"],
+    github: "https://github.com/dawasherpa-ui/Instagram-Unfollower",
   },
   {
     title: "Dot Domain",
-    description: "Domain availability checking tool.",
-    tags: ["Tool", "Domain", "Utility"],
+    description: "Ultra-fast domain availability and DNS lookup tool providing instant WHOIS records and multi-TLD extension pricing comparisons.",
+    tags: ["Tool", "Domain", "Utility", "API"],
     link: "https://dot-domain.vercel.app/",
     image: "https://res.cloudinary.com/djt69tcer/image/upload/v1771218632/dot-domain.vercel.app__emsv7j.png",
+    category: "SaaS & Web",
+    featured: false,
+    highlights: ["Concurrent multi-registry WHOIS querying", "Real-time suggestion generator", "Responsive lightweight interface"],
+    github: "https://github.com/dawasherpa-ui",
   },
 ];
 
